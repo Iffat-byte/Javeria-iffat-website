@@ -216,15 +216,17 @@ a.glass:hover{border-color:rgba(185,167,255,.4);transform:translateY(-2px)}
 
 /* ---------- condition page: clear, premium separation between sections ---------- */
 .cond-sec{position:relative;padding-block:72px}
-.cond-sec::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(620px,72%);height:1px;background:linear-gradient(90deg, transparent, rgba(185,167,255,.38), rgba(242,207,138,.55), rgba(185,167,255,.38), transparent)}
-.cond-sec::after{content:"";position:absolute;top:-4px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(242,207,138,.12), 0 0 18px rgba(242,207,138,.6)}
+.home-sec{position:relative}
+.cond-sec::before,.home-sec::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(620px,72%);height:1px;background:linear-gradient(90deg, transparent, rgba(185,167,255,.38), rgba(242,207,138,.55), rgba(185,167,255,.38), transparent)}
+.cond-sec::after,.home-sec::after{content:"";position:absolute;top:-4px;left:50%;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(242,207,138,.12), 0 0 18px rgba(242,207,138,.6)}
 .cond-panel{max-width:1080px;padding-block:56px;border-radius:32px;border:1px solid var(--line);background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(185,167,255,.07), transparent 70%), rgba(255,255,255,.018);box-shadow:0 30px 80px rgba(0,0,0,.25)}
 .cond-sec:nth-of-type(odd){background:linear-gradient(180deg, rgba(13,20,48,.55), rgba(13,20,48,0) 70%)}
-.cond-last{padding-bottom:120px}
+.cond-last,.home-last{padding-bottom:120px}
+.book-card{position:relative;padding:64px 24px;border-radius:32px;overflow:hidden;background:radial-gradient(ellipse 60% 90% at 50% 120%, rgba(242,207,138,.18), transparent 70%), radial-gradient(ellipse 70% 80% at 50% -20%, rgba(185,167,255,.16), transparent 70%), #0b1130}
 .cond-cta{position:relative;margin-top:72px;padding:64px 24px;border-radius:32px;overflow:hidden;background:radial-gradient(ellipse 60% 90% at 50% 120%, rgba(242,207,138,.18), transparent 70%), radial-gradient(ellipse 70% 80% at 50% -20%, rgba(185,167,255,.16), transparent 70%), #0b1130}
-.cond-cta::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg, rgba(185,167,255,.55), rgba(242,207,138,.55), rgba(185,167,255,.15));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);pointer-events:none}
+.cond-cta::before,.book-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg, rgba(185,167,255,.55), rgba(242,207,138,.55), rgba(185,167,255,.15));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);pointer-events:none}
 .foot{border-top:1px solid rgba(185,167,255,.14)}
-@media (max-width:600px){.cond-sec{padding-block:56px}.cond-panel{padding-block:40px;border-radius:24px}.cond-cta{padding:48px 18px;border-radius:24px}.cond-last{padding-bottom:88px}}
+@media (max-width:600px){.book-card{padding:48px 18px;border-radius:24px}.home-last{padding-bottom:88px}.cond-sec{padding-block:56px}.cond-panel{padding-block:40px;border-radius:24px}.cond-cta{padding:48px 18px;border-radius:24px}.cond-last{padding-bottom:88px}}
 /* ---------- premium cards ---------- */
 @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
 .glass{transform-style:preserve-3d;will-change:transform}
@@ -360,7 +362,7 @@ body.menu-open .wa-float{display:none}
   </section>
 
 
-  <section class="sec" id="services">
+  <section class="sec home-sec" id="services">
     <div class="wrap center">
       <p class="eyebrow">How I Help</p>
       <h2 class="h-l" style="margin-top:12px">Support for what you’re <em>going through</em></h2>
@@ -374,7 +376,7 @@ body.menu-open .wa-float{display:none}
     </div>
   </section>
 
-  <section class="sec" id="about">
+  <section class="sec home-sec" id="about">
     <div class="wrap about">
       <div class="portrait"><canvas id="aboutCanvas" aria-hidden="true"></canvas><small>“Healing begins with being heard.”</small></div>
       <div>
@@ -390,7 +392,7 @@ body.menu-open .wa-float{display:none}
     </div>
   </section>
 
-  <section class="sec" id="testimonials" hidden>
+  <section class="sec home-sec" id="testimonials" hidden>
     <div class="wrap center">
       <p class="eyebrow">Kind words</p>
       <h2 class="h-l" style="margin-top:12px">In their <em>own words</em></h2>
@@ -399,7 +401,7 @@ body.menu-open .wa-float{display:none}
     </div>
   </section>
 
-  <section class="sec" id="faq">
+  <section class="sec home-sec" id="faq">
     <div class="wrap faq">
       <div>
         <p class="eyebrow">Questions</p>
@@ -417,8 +419,9 @@ body.menu-open .wa-float{display:none}
     </div>
   </section>
 
-  <section class="sec" id="book">
-    <div class="wrap cta">
+  <section class="sec home-sec home-last" id="book">
+    <div class="wrap">
+    <div class="cta book-card">
       <p class="eyebrow">Book a session</p>
       <h2 class="h-l">Your first conversation <em>starts here.</em></h2>
       <p class="lead">Online appointments are available. Message me on WhatsApp to book a session or ask a question. Everything you share stays confidential.</p>
@@ -428,6 +431,7 @@ body.menu-open .wa-float{display:none}
         <div>Sessions<b>Online · Lahore</b></div>
       </div>
       <div class="row"><a class="btn" href="https://wa.me/923011233121" target="_blank" rel="noopener"><svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-.9.8a4 4 0 0 1-2.2-2.2l.8-.9-1-2z"/></svg>Chat on WhatsApp</a><button class="btn ghost" type="button" data-copy="0301-1233121">Copy number</button></div>
+    </div>
     </div>
   </section>
 </div>
