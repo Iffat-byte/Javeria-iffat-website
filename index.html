@@ -207,6 +207,12 @@ a.glass:hover{border-color:rgba(185,167,255,.4);transform:translateY(-2px)}
 @media (prefers-reduced-motion: reduce){ .hint::after,.mark::before,.mark i{animation:none} .orb{transition-duration:.01s} .bar{transition:none} .mnav:not([hidden]) .mnav-in > *, .mnav:not([hidden]) .sub{animation:none} }
 
 
+.helps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:40px;text-align:left}
+.help{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:16px;border:1px solid var(--line);background:var(--glass);font-size:15px;line-height:1.35}
+.help i{flex:none;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle, rgba(242,207,138,.25), rgba(242,207,138,.06));position:relative}
+.help i::after{content:"";position:absolute;left:7.5px;top:4.5px;width:5px;height:9px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg)}
+@media (max-width:820px){.helps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.helps{grid-template-columns:1fr}}
 /* ---------- premium cards ---------- */
 @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
 .glass{transform-style:preserve-3d;will-change:transform}
@@ -451,10 +457,10 @@ body.menu-open .wa-float{display:none}
 
   <section class="sec">
     <div class="wrap center">
-      <p class="eyebrow">How we’ll work on it</p>
+      <p class="eyebrow">Where therapy can take you</p>
       <h2 class="h-l" style="margin-top:12px" id="cApproachTitle"></h2>
       <p class="lead" style="margin-top:16px" id="cApproach"></p>
-      <div class="steps" id="cSteps" style="text-align:left"></div>
+      <div class="helps" id="cSteps"></div>
     </div>
   </section>
 
@@ -601,6 +607,9 @@ const C = [
   steps:[['Explore who you are','Your values, strengths and what you want more of in life.'],['Set meaningful goals','Clear, realistic goals that fit your life.'],['Build lasting habits','Practical skills for emotional balance and wellbeing.']],
   cta:'Ready to <em>grow?</em>'}
 ];
+const HELPS = {"depression": ["Lift your mood", "Find your energy again", "Enjoy things you used to love", "Sleep and eat more regularly", "Be kinder to yourself", "Reconnect with people"], "anxiety": ["Feel calmer in your body", "Worry less", "Handle panic attacks", "Face fears step by step", "Sleep better", "Feel more in control"], "ocd": ["Spend less time on rituals", "Feel less driven by unwanted thoughts", "Live with uncertainty", "Need less reassurance", "Get your time back", "Feel more free"], "stress": ["Notice stress early", "Calm your body quickly", "Respond instead of react", "Set healthier boundaries", "Feel less overwhelmed", "Rest and recover"], "self-esteem": ["Quiet the inner critic", "See your strengths", "Say no with confidence", "Try new things", "Accept compliments", "Treat yourself with respect"], "relationships": ["Communicate more clearly", "Argue less, understand more", "Set healthy boundaries", "Rebuild trust", "Feel heard", "Break old patterns"], "overthinking": ["Step out of thought loops", "Make decisions more easily", "Worry less about “what ifs”", "Sleep with a quieter mind", "Focus on the present", "Feel mentally lighter"], "life-transitions": ["Make sense of the change", "Feel more settled", "Build a new routine", "Handle mixed emotions", "Rediscover what matters", "Face the future with hope"], "grief": ["Make space for your feelings", "Cope with difficult days", "Ease guilt and regret", "Keep the bond with your loved one", "Find moments of peace", "Re-engage with life gently"], "growth": ["Understand yourself better", "Build emotional resilience", "Clarify your values", "Set meaningful goals", "Build healthier habits", "Feel more fulfilled"]};
+const NOTES = {"depression": "I am certified in CBT for Depression by the Beck Institute.", "anxiety": "I am certified in CBT for Anxiety by the Beck Institute."};
+C.forEach(c => { c.helps = HELPS[c.id]; c.note = NOTES[c.id] || ''; });
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
 const amp = s => s.replace(/&/g, '&amp;');
 
@@ -622,9 +631,9 @@ function renderCond(c){
   $('cSignsTitle').innerHTML = c.signsTitle;
   $('cChips').innerHTML = c.signs.map(s => `<span class="chip">${s}</span>`).join('');
   $('cNote').textContent = c.signsEyebrow ? 'Therapy is a space for anyone who wants to understand themselves better.' : 'If several of these feel familiar, talking to a professional can help. You don’t have to wait until it gets worse.';
-  $('cApproachTitle').innerHTML = c.approachTitle;
-  $('cApproach').textContent = c.approach;
-  $('cSteps').innerHTML = c.steps.map((s, k) => `<div class="step"><b>${k+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+  $('cApproachTitle').innerHTML = 'What therapy can <em>help with</em>';
+  $('cApproach').textContent = c.note; $('cApproach').hidden = !c.note;
+  $('cSteps').innerHTML = c.helps.map(h => `<span class="help"><i aria-hidden="true"></i>${h}</span>`).join('');
   $('cBreathe').hidden = !c.breathe;
   $('cCta').innerHTML = c.cta;
   const p = $('cPrev'), n = $('cNext');
