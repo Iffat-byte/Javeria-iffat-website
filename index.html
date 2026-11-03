@@ -478,10 +478,6 @@ body.menu-open .wa-float{display:none}
         <p class="lead">Online appointments are available.</p>
         <a class="btn" href="#home" data-scroll="book">Book a session</a>
       </div>
-      <div class="next">
-        <a id="cPrev" href="#how-i-help"></a>
-        <a id="cNext" href="#how-i-help" style="text-align:right"></a>
-      </div>
     </div>
   </section>
 </div>
@@ -636,9 +632,6 @@ function renderCond(c){
   $('cSteps').innerHTML = c.helps.map(h => `<span class="help"><i aria-hidden="true"></i>${h}</span>`).join('');
   $('cBreathe').hidden = !c.breathe;
   $('cCta').innerHTML = c.cta;
-  const p = $('cPrev'), n = $('cNext');
-  p.setAttribute('href', prev ? '#' + prev.id : '#how-i-help'); p.innerHTML = prev ? `← Previous<b>${amp(prev.name)}</b>` : `← Back to<b>All areas</b>`;
-  n.setAttribute('href', next ? '#' + next.id : '#how-i-help'); n.innerHTML = next ? `Next<b>${amp(next.name)} →</b>` : `See<b>All areas →</b>`;
   setFx(c.id);
 }
 
