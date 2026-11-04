@@ -368,9 +368,9 @@ body.menu-open .wa-float{display:none}
       <h2 class="h-l" style="margin-top:12px">Support for what you’re <em>going through</em></h2>
       <p class="lead" style="margin-top:16px">Evidence-based therapy in a calm, confidential space. Every plan is shaped around you.</p>
       <div class="glass-grid" style="text-align:left">
-        <a class="glass" href="#depression"><span class="tag">CBT</span><h3>Depression &amp; Mood Difficulties</h3><p>Find your energy, your routine and your sense of hope again.</p><span class="go">Explore →</span></a>
-        <a class="glass" href="#anxiety"><span class="tag">CBT</span><h3>Anxiety, Panic &amp; Phobias</h3><p>Understand the racing thoughts and fears, and learn tools that quiet them.</p><span class="go">Explore →</span></a>
-        <a class="glass" href="#overthinking"><span class="tag">CBT</span><h3>Overthinking &amp; Negative Thoughts</h3><p>Step out of thought loops that always expect the worst.</p><span class="go">Explore →</span></a>
+        <a class="glass" href="#depression"><span class="tag">Feel lighter</span><h3>Depression &amp; Mood Difficulties</h3><p>Find your energy, your routine and your sense of hope again.</p><span class="go">Explore →</span></a>
+        <a class="glass" href="#anxiety"><span class="tag">Find your calm</span><h3>Anxiety, Panic &amp; Phobias</h3><p>Understand the racing thoughts and fears, and learn tools that quiet them.</p><span class="go">Explore →</span></a>
+        <a class="glass" href="#overthinking"><span class="tag">A quieter mind</span><h3>Overthinking &amp; Negative Thoughts</h3><p>Step out of thought loops that always expect the worst.</p><span class="go">Explore →</span></a>
       </div>
       <div style="margin-top:36px"><a class="btn ghost" href="#how-i-help">See all 10 areas of focus</a></div>
     </div>
@@ -527,7 +527,7 @@ const onScreen = el => { const r = el.getBoundingClientRect(); return r.bottom >
 
 /* ---------- areas of focus (content) ---------- */
 const C = [
- {id:'depression', name:'Depression & Mood Difficulties', tag:'CBT', card:'Low mood, no energy, losing interest in things you once enjoyed.',
+ {id:'depression', name:'Depression & Mood Difficulties', tag:'Feel lighter', card:'Low mood, no energy, losing interest in things you once enjoyed.',
   a:['Depression feels <em>like this.</em>','Drooping, drained and grey, as if the colour has gone out of life.'],
   b:['You can <em>bloom again.</em>','With the right support, energy, interest and hope return, slowly and surely.'],
   signsTitle:'Depression is more than <em>feeling sad</em>',
@@ -536,7 +536,7 @@ const C = [
   approach:'I am certified in CBT for Depression by the Beck Institute. CBT helps you notice the thoughts and habits that keep low mood going, and change them step by step.',
   steps:[['Understand your low mood','We look at what keeps it going: thoughts, routines, sleep and relationships.'],['Rebuild small routines','Small, planned activities bring back energy, achievement and pleasure.'],['Change the inner voice','We challenge harsh, hopeless thoughts and build kinder, more balanced ones.']],
   cta:'Ready to feel <em>lighter?</em>'},
- {id:'anxiety', name:'Anxiety, Panic & Phobias', tag:'CBT', card:'Racing thoughts, panic attacks and fears that hold you back.',
+ {id:'anxiety', name:'Anxiety, Panic & Phobias', tag:'Find your calm', card:'Racing thoughts, panic attacks and fears that hold you back.',
   a:['Anxiety feels <em>like this.</em>','Racing thoughts, a restless body, a mind that won’t switch off.'],
   b:['Therapy helps it <em>settle.</em>','Step by step, the noise slows down and you feel like yourself again.'],
   signsTitle:'Anxiety shows up in the <em>mind and body</em>',
@@ -545,7 +545,7 @@ const C = [
   approach:'I am certified in CBT for Anxiety by the Beck Institute. CBT is one of the most researched and effective treatments for anxiety.',
   steps:[['Understand your anxiety','We map what triggers it, the thoughts that feed it and how your body reacts.'],['Learn practical tools','Breathing, thought challenging and gradual exposure that you practise between sessions.'],['Build lasting calm','Confidence grows as anxiety loosens its grip, with a plan to handle setbacks.']],
   cta:'Ready to feel <em>calmer?</em>', breathe:true},
- {id:'ocd', name:'OCD & Related Concerns', tag:'CBT', card:'Unwanted thoughts and urges to check, clean or repeat that are hard to stop.',
+ {id:'ocd', name:'OCD & Related Concerns', tag:'Feel free again', card:'Unwanted thoughts and urges to check, clean or repeat that are hard to stop.',
   a:['OCD feels <em>like this.</em>','Did I lock it? Check again. And again. Until it feels “just right”.'],
   b:['It’s locked. <em>You can let go.</em>','You can learn to let anxious thoughts pass without obeying them.'],
   signsTitle:'When thoughts and rituals <em>take over</em>',
@@ -554,7 +554,7 @@ const C = [
   approach:'We use a structured CBT approach to understand the OCD cycle and gently reduce the rituals that keep it going.',
   steps:[['Map the OCD cycle','We identify the triggers, the fears and the rituals that follow.'],['Face fears gradually','Step by step, you practise sitting with uncertainty without performing the ritual.'],['Take your time back','As rituals shrink, you regain time, freedom and confidence.']],
   cta:'Ready to break <em>the loop?</em>'},
- {id:'stress', name:'Stress & Emotional Regulation', tag:'Coping skills', card:'Feeling overwhelmed, quick to anger or tears, and unable to switch off.',
+ {id:'stress', name:'Stress & Emotional Regulation', tag:'Find balance', card:'Feeling overwhelmed, quick to anger or tears, and unable to switch off.',
   a:['Stress feels <em>like this.</em>','Everything stirred up at once, too cloudy to see clearly.'],
   b:['Let it <em>settle.</em>','With the right skills, emotions calm down and clarity returns.'],
   signsTitle:'When emotions feel <em>too big</em>',
@@ -563,7 +563,7 @@ const C = [
   approach:'We build practical skills to notice emotions early, calm the body and respond in ways you feel good about.',
   steps:[['Notice the early signs','Learn your personal stress signals before they peak.'],['Calm the body','Breathing, grounding and relaxation skills you can use anywhere.'],['Respond, not react','Tools to handle difficult moments, conversations and pressure.']],
   cta:'Ready to find <em>balance?</em>', breathe:true},
- {id:'self-esteem', name:'Self-Esteem & Confidence Issues', tag:'Self-worth', card:'A harsh inner critic, self-doubt and feeling you are not good enough.',
+ {id:'self-esteem', name:'Self-Esteem & Confidence Issues', tag:'Believe in yourself', card:'A harsh inner critic, self-doubt and feeling you are not good enough.',
   a:['Low self-esteem feels <em>like this.</em>','A small inner light, drowned out by a loud inner critic.'],
   b:['Your light can <em>grow.</em>','You can learn to see your strengths and treat yourself with respect.'],
   signsTitle:'The inner critic <em>sounds familiar</em>',
@@ -572,7 +572,7 @@ const C = [
   approach:'We work on the core beliefs behind low self-esteem and build a more balanced, compassionate view of yourself.',
   steps:[['Hear the inner critic','We identify the beliefs and rules you live by, and where they came from.'],['Test the evidence','We gently question harsh judgements and notice what you overlook.'],['Build confidence in action','Small brave steps that show what you are capable of.']],
   cta:'Ready to believe <em>in yourself?</em>'},
- {id:'relationships', name:'Relationship & Interpersonal Difficulties', tag:'Connection', card:'Conflict, distance and communication with family, partners and friends.',
+ {id:'relationships', name:'Relationship & Interpersonal Difficulties', tag:'Reconnect', card:'Conflict, distance and communication with family, partners and friends.',
   a:['Disconnection feels <em>like this.</em>','Two people close by, yet worlds apart.'],
   b:['Connection can be <em>rebuilt.</em>','Better understanding brings people closer again.'],
   signsTitle:'When relationships <em>feel hard</em>',
@@ -581,7 +581,7 @@ const C = [
   approach:'We explore your relationship patterns and build skills for clearer communication, healthier boundaries and deeper connection.',
   steps:[['Understand your patterns','We look at how you connect, react and protect yourself in relationships.'],['Communicate clearly','Learn to express needs and listen without escalating conflict.'],['Set healthy boundaries','Protect your wellbeing while staying close to the people who matter.']],
   cta:'Ready to <em>reconnect?</em>'},
- {id:'overthinking', name:'Overthinking & Negative Thought Patterns', tag:'CBT', card:'Thoughts that loop, spiral and always expect the worst.',
+ {id:'overthinking', name:'Overthinking & Negative Thought Patterns', tag:'A quieter mind', card:'Thoughts that loop, spiral and always expect the worst.',
   a:['Overthinking feels <em>like this.</em>','The same thoughts circling, faster and faster, going nowhere.'],
   b:['Thoughts can find <em>a path.</em>','You can step out of the spiral and move forward.'],
   signsTitle:'Caught in the <em>thought loop</em>',
@@ -590,7 +590,7 @@ const C = [
   approach:'CBT teaches you to notice thinking traps, question them and shift your attention to what you can actually act on.',
   steps:[['Spot the thinking traps','Catastrophising, mind-reading and other patterns that fuel overthinking.'],['Question the thoughts','Look at the evidence and find more balanced ways of thinking.'],['Move into action','Worry time, problem solving and present-moment skills.']],
   cta:'Ready for a <em>quieter mind?</em>'},
- {id:'life-transitions', name:'Adjustment & Life Transitions', tag:'Life changes', card:'Marriage, a new city, a new job, or any change that feels hard to settle into.',
+ {id:'life-transitions', name:'Adjustment & Life Transitions', tag:'Your next chapter', card:'Marriage, a new city, a new job, or any change that feels hard to settle into.',
   a:['Change feels <em>like this.</em>','The old shape of life falls apart before the new one forms.'],
   b:['A new shape can <em>form.</em>','With support, change becomes a door rather than a wall.'],
   signsTitle:'Big changes can <em>shake us</em>',
@@ -599,7 +599,7 @@ const C = [
   approach:'We make sense of what has changed, what it means for you, and how to build a routine and identity that fit your new life.',
   steps:[['Acknowledge the change','Make space for mixed feelings: loss, fear and hope can exist together.'],['Find stability','Build routines and support that help you feel grounded again.'],['Shape the new chapter','Set goals and rediscover what matters in this stage of life.']],
   cta:'Ready for your <em>next chapter?</em>'},
- {id:'grief', name:'Grief & Loss', tag:'Gentle support', card:'Coping with the loss of someone or something important to you.',
+ {id:'grief', name:'Grief & Loss', tag:'Heal gently', card:'Coping with the loss of someone or something important to you.',
   a:['Grief feels <em>like this.</em>','As if something inside has broken into pieces.'],
   b:['Mended with <em>gold.</em>','Grief changes us, but healing can make us whole again, carrying love in every line.'],
   signsTitle:'Grief has <em>no single shape</em>',
@@ -608,7 +608,7 @@ const C = [
   approach:'Grief is not a problem to fix. Therapy gives you a safe space to remember, to feel, and to find a way to live with your loss.',
   steps:[['Make space for grief','Talk about your loss and your loved one without being rushed.'],['Understand your feelings','Guilt, anger and sadness are all part of grieving. We work through them together.'],['Carry the bond forward','Find meaningful ways to remember while slowly re-engaging with life.']],
   cta:'You don’t have to grieve <em>alone.</em>'},
- {id:'growth', name:'Personal Growth & Emotional Wellbeing', tag:'Wellbeing', card:'Understand yourself better and build a calmer, fuller life.',
+ {id:'growth', name:'Personal Growth & Emotional Wellbeing', tag:'Grow with intention', card:'Understand yourself better and build a calmer, fuller life.',
   a:['Growth starts <em>small.</em>','Every change begins as a seed of curiosity about yourself.'],
   b:['And keeps <em>growing.</em>','Self-understanding branches into calm, confidence and connection.'],
   signsEyebrow:'What we can work on',
